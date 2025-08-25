@@ -1,0 +1,1 @@
+# resource_catalog_service_example
