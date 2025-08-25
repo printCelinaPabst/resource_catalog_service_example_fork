@@ -1,0 +1,276 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+    "name": "Resource Catalog Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_collection_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef"
+  },
+  "item": [
+    {
+      "name": "Get All Resources",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/resources",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "Course",
+              "description": "Optional: Filter by resource type",
+              "disabled": true
+            },
+            {
+              "key": "authorId",
+              "value": "auth-alice",
+              "description": "Optional: Filter by author ID",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "Retrieves a list of all resources, optionally filtered by type or authorId."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Resource by ID (res-187e1488-81d3-4a11-a83d-e3c79c8f0001)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/resources/res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-187e1488-81d3-4a11-a83d-e3c79c8f0001"
+          ]
+        },
+        "description": "Retrieves a single resource by its ID, including its average rating."
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Resource",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New Course: Advanced Algorithms in Python\",\n  \"type\": \"Course\",\n  \"description\": \"A deep dive into advanced data structures and algorithm design techniques.\",\n  \"authorId\": \"auth-charlie\",\n  \"skillTags\": [\"Algorithms\", \"Python\", \"Data Structures\", \"Problem Solving\"],\n  \"url\": \"https://example.com/advanced-algo-python\"\n}"
+        },
+        "url": {
+          "raw": "{{baseURL}}/resources",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources"
+          ]
+        },
+        "description": "Creates a new learning resource. Requires 'title' and 'type' in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Update Resource (res-06c39f21-7290-4c74-9040-277501a30002)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Advanced JavaScript Concepts (Updated Edition)\",\n  \"type\": \"Video Series\",\n  \"description\": \"Dive deep into closures, prototypes, asynchronous JavaScript, and more. Now with ES2023 features!\",\n  \"skillTags\": [\"JavaScript\", \"Web Development\", \"Frontend\", \"ES2023\"]\n}"
+        },
+        "url": {
+          "raw": "{{baseURL}}/resources/res-06c39f21-7290-4c74-9040-277501a30002",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-06c39f21-7290-4c74-9040-277501a30002"
+          ]
+        },
+        "description": "Updates an existing resource identified by its ID. Requires 'title' and 'type' in the body for validation."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Resource (res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/resources/res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005"
+          ]
+        },
+        "description": "Deletes a resource by its ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Add Rating to Resource (res-7d341b53-b097-4f67-a859-58d35e180003)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ratingValue\": 4,\n  \"userId\": \"user-new-001\"\n}"
+        },
+        "url": {
+          "raw": "{{baseURL}}/resources/res-7d341b53-b097-4f67-a859-58d35e180003/ratings",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-7d341b53-b097-4f67-a859-58d35e180003",
+            "ratings"
+          ]
+        },
+        "description": "Adds a new rating (1-5) to a specified resource. Requires 'ratingValue' in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Add Feedback to Resource (res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"feedbackText\": \"This book could use more advanced examples for Pandas.\",\n  \"userId\": \"user-new-002\"\n}"
+        },
+        "url": {
+          "raw": "{{baseURL}}/resources/res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004/feedback",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
+            "feedback"
+          ]
+        },
+        "description": "Adds new feedback to a specified resource. Requires 'feedbackText' in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Update Feedback (res-187e1488-81d3-4a11-a83d-e3c79c8f0001, feed-6916542d-f933-40e9-a359-f30a9e7f8001)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"feedbackText\": \"This course is still very helpful for beginners, highly recommended!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseURL}}/resources/res-187e1488-81d3-4a11-a83d-e3c79c8f0001/feedback/feed-6916542d-f933-40e9-a359-f30a9e7f8001",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+            "feedback",
+            "feed-6916542d-f933-40e9-a359-f30a9e7f8001"
+          ]
+        },
+        "description": "Updates an existing feedback entry for a specific resource. Requires 'feedbackText' in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Feedback (res-06c39f21-7290-4c74-9040-277501a30002, feed-6916542d-f933-40e9-a359-f30a9e7f8002)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/resources/res-06c39f21-7290-4c74-9040-277501a30002/feedback/feed-6916542d-f933-40e9-a359-f30a9e7f8002",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "resources",
+            "res-06c39f21-7290-4c74-9040-277501a30002",
+            "feedback",
+            "feed-6916542d-f933-40e9-a359-f30a9e7f8002"
+          ]
+        },
+        "description": "Deletes a specific feedback entry for a given resource."
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// You can add pre-request scripts here, e.g., to set environment variables or generate dynamic data.",
+          "// Example: pm.environment.set(\"resourceId\", \"some-uuid-id\");"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// You can add test scripts here to validate responses.",
+          "// Example: pm.test(\"Status code is 200\", function () {",
+          "//     pm.response.to.have.status(200);",
+          "// });"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "http://localhost:5002",
+      "type": "string",
+      "description": "The base URL for the Resource Catalog Service. Update if your service runs on a different host/port."
+    }
+  ]
+}
