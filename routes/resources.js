@@ -1,323 +1,471 @@
 /**
- * @file Manages API routes for the resource catalog, encompassing operations for
- * fetching resources, and comprehensive CRUD operations for feedback (including ratings)
- * associated with those resources. This file adheres to modern ES Module syntax.
- * @author Your Name
+ * @file Dieser Router verwaltet alle API-Endpunkte für Ressourcen, Bewertungen und Feedback
+ * im Resource Catalog Service.
+ * @description
+ * - Bietet CRUD-Operationen auf Ressourcen (Anlegen, Lesen, Aktualisieren, Löschen).
+ * - Verwaltet Bewertungen (Ratings) und textbasiertes Feedback zu Ressourcen.
+ * - Die Endpunkte liefern je nach Route:
+ *   - GET /           → Ressourcen mit `averageRating` (ohne `feedback`)
+ *   - GET /:id        → Ressource mit `averageRating` **und** vollständigem `feedback`
+ *   - POST/PUT/DELETE → wie dokumentiert unten; Schreib-Endpoints geben angereicherte Ressourcen zurück, wo sinnvoll.
+ *
+ * Datenspeicher:
+ * - `resources.json`: Liste der Ressourcenobjekte.
+ * - `ratings.json`  : Liste der Bewertungen (resourceId, ratingValue, userId, timestamp).
+ * - `feedback.json` : Liste der Feedback-Einträge (resourceId, feedbackText, userId, timestamp).
  */
 
 import express from 'express';
-import fs from 'fs';
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid'; // Utilized for generating unique identifiers for new feedback entries
-import { fileURLToPath } from 'url';
+import { v4 as uuidv4 } from 'uuid';
+import { validateResource, validateRating, validateFeedback } from '../middleware/validation.js';
+import { readData, writeData } from '../helpers/data_manager.js';
+import { buildEnrichedResource } from '../helpers/enrich_resource.js';
+import { average } from '../helpers/metrics.js';
 
 const router = express.Router();
 
-// In ES Module environments, `__dirname` is not intrinsically available.
-// We explicitly reconstruct it to ensure correct file path resolution.
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Define the absolute file paths for data storage.
-// These paths assume a 'data' directory exists at the root level of your project,
-// positioned as a sibling to your 'routes' directory.
-const resourcesFilePath = path.join(__dirname, '../data/resources.json');
-const feedbackFilePath = path.join(__dirname, '../data/feedback.json');
-
-/**
- * @function readData
- * @description A synchronous helper utility designed to read and parse data from a specified JSON file.
- * It gracefully handles scenarios where the file might not exist or contains malformed JSON
- * by logging the error and returning an empty array, ensuring API robustness.
- * @param {string} filePath - The absolute path to the JSON file to be read.
- * @returns {Array<Object>} The parsed JSON data as an array of JavaScript objects.
- * Returns an empty array if the file is not found or parsing fails.
- */
-const readData = (filePath) => {
-    try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error(`Error reading ${filePath}:`, error);
-        return [];
-    }
-};
-
-/**
- * @function writeData
- * @description A synchronous helper utility for writing an array of data objects to a specified JSON file.
- * The output JSON is formatted with 2-space indentation for enhanced readability.
- * @param {string} filePath - The absolute path to the JSON file where data will be written.
- * @param {Array<Object>} data - The array of data objects to serialize and write to the file.
- */
-const writeData = (filePath, data) => {
-    try {
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    } catch (error) {
-        console.error(`Error writing to ${filePath}:`, error);
-    }
-};
+const RESOURCES_FILE = 'resources.json';
+const RATINGS_FILE   = 'ratings.json';
+const FEEDBACK_FILE  = 'feedback.json';
 
 // --- RESOURCE ENDPOINTS ---
 
 /**
- * @route GET /resources
- * @description **Retrieves a comprehensive list of all learning resources.**
- * Each resource object in the response is augmented to include an embedded array
- * of all its associated feedback entries (which inherently contain ratings).
- * This allows for a single API call to get resources along with their current feedback status.
+ * @route GET /
+ * @summary Ruft alle Ressourcen ab (optional gefiltert), **mit durchschnittlicher Bewertung, ohne Feedback**.
+ * @description
+ * **Ruft eine umfassende Liste aller Ressourcen ab.**
+ *
+ * Jede Ressource im Response enthält:
+ * - Basisdaten (z. B. `id`, `title`, `type`, `authorId`, …)
+ * - `averageRating`: den Durchschnitt aller abgegebenen Bewertungen (0, wenn keine vorliegen)
+ *
+ * **Hinweis:** Diese Route liefert absichtlich **kein** `feedback`-Array, um die Antwort klein zu halten.
+ * Für eine vollständige Detailansicht inkl. Feedback nutze **GET /:id**.
+ *
+ * Optional kann nach Ressourcentyp (`type`) oder Autor (`authorId`) gefiltert werden.
+ *
  * @access Public
- * @returns {Array<Object>} 200 - An array of resource objects. Each object contains
- * its fundamental details and a `feedback` array.
- * The `feedback` array will be empty if no feedback exists for a resource.
+ * @param {string} [req.query.type] - Optional: Filtert die Ergebnisse nach Ressourcentyp.
+ * @param {string} [req.query.authorId] - Optional: Filtert die Ergebnisse nach Autor-ID.
+ * @returns {Array<Object>} 200 - Liste aller Ressourcen (angereichert um `averageRating`, ohne `feedback`).
+ * @returns {Object} 500 - Interner Serverfehler.
+ *
  * @example
- * // Request: GET /resources
- * // Response (Status: 200 OK):
+ * // Request: GET /resources?type=frontend
+ * // Response (200):
  * // [
  * //   {
- * //     "id": "resource-123",
- * //     "title": "Mastering React Hooks",
- * //     "description": "A deep dive into functional components and hooks.",
- * //     "topic": "Frontend Development",
- * //     "feedback": [
- * //       { "id": "feedback-a1", "resourceId": "resource-123", "comment": "Excellent!", "rating": 5, "author": "devUser", "timestamp": "2023-08-25T10:00:00.000Z" },
- * //       { "id": "feedback-b2", "resourceId": "resource-123", "comment": "Could use more examples.", "rating": 4, "author": "learnerX", "timestamp": "2023-08-25T11:30:00.000Z" }
- * //     ]
- * //   },
- * //   {
- * //     "id": "resource-456",
- * //     "title": "Introduction to Node.js",
- * //     "topic": "Backend Development",
- * //     "feedback": [] // No feedback yet for this resource
+ * //     "id": "123",
+ * //     "title": "React Basics",
+ * //     "type": "frontend",
+ * //     "authorId": "dev42",
+ * //     "averageRating": 4.5
  * //   }
  * // ]
  */
-router.get('/', (req, res) => {
-    const resources = readData(resourcesFilePath);
-    const feedback = readData(feedbackFilePath);
+router.get('/', async (req, res, next) => {
+  try {
+    const resources = await readData(RESOURCES_FILE);
+    const ratings   = await readData(RATINGS_FILE);
 
-    // Iterates through each resource to attach its relevant feedback entries.
-    const resourcesWithFeedback = resources.map(resource => ({
-        ...resource,
-        // Filters the global feedback array to find only entries pertaining to the current resource.
-        feedback: feedback.filter(f => f.resourceId === resource.id)
-    }));
-    res.json(resourcesWithFeedback);
+    const { type, authorId } = req.query;
+
+    let filtered = resources;
+    if (type)     filtered = filtered.filter(r => String(r.type) === String(type));
+    if (authorId) filtered = filtered.filter(r => String(r.authorId) === String(authorId));
+
+    // Anreichern NUR mit averageRating (KEIN feedback anhängen)
+    const enriched = filtered.map(resource => {
+      const resourceId = String(resource.id);
+      const resourceRatings = ratings.filter(r => String(r.resourceId) === resourceId);
+      const avgRating = average(resourceRatings.map(r => r.ratingValue));
+
+      // explizit KEIN 'feedback' Feld zurückgeben
+      const { feedback, ...rest } = resource; // falls im Datensatz existiert, entfernen
+      return {
+        ...rest,
+        averageRating: avgRating
+      };
+    });
+
+    res.status(200).json(enriched);
+  } catch (error) {
+    console.error('Fehler beim Abrufen aller Ressourcen:', error);
+    next(error);
+  }
 });
 
 /**
- * @route GET /resources/:id
- * @description **Retrieves a single learning resource by its unique ID.**
- * The returned resource object is enhanced with an embedded array of all its
- * associated feedback entries, providing a complete view of the resource and its evaluations.
+ * @route GET /:id
+ * @summary Ruft eine einzelne Ressource anhand ihrer ID ab, **mit durchschnittlicher Bewertung und vollständigem Feedback**.
+ * @description
+ * **Ruft eine Ressource by ID ab** und liefert:
+ * - alle Basisinformationen der Ressource
+ * - `averageRating`: den Durchschnitt aller Bewertungen
+ * - `feedback`: alle zugehörigen Feedback-Einträge
+ *
+ * Falls keine Ressource mit der angegebenen ID existiert, wird `404 Not Found` zurückgegeben.
+ *
  * @access Public
- * @param {string} req.params.id - The unique identifier of the resource to be fetched.
- * @returns {Object} 200 - The resource object, including its details and a `feedback` array.
- * @returns {Object} 404 - If no resource with the provided ID is found in the catalog.
+ * @param {string} req.params.id - Die ID der abzurufenden Ressource.
+ * @returns {Object} 200 - Ressource mit `averageRating` und `feedback`.
+ * @returns {Object} 404 - Ressource nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
+ *
  * @example
- * // Request: GET /resources/resource-123
- * // Response (Status: 200 OK):
- * // {
- * //   "id": "resource-123",
- * //   "title": "Mastering React Hooks",
- * //   "description": "A deep dive into functional components and hooks.",
- * //   "topic": "Frontend Development",
+ * // Request: GET /resources/123
+ * // Response (200): {
+ * //   "id": "123",
+ * //   "title": "React Basics",
+ * //   "type": "frontend",
+ * //   "averageRating": 4.2,
  * //   "feedback": [
- * //     { "id": "feedback-a1", "resourceId": "resource-123", "comment": "Excellent!", "rating": 5, "author": "devUser", "timestamp": "2023-08-25T10:00:00.000Z" },
- * //     { "id": "feedback-b2", "resourceId": "resource-123", "comment": "Could use more examples.", "rating": 4, "author": "learnerX", "timestamp": "2023-08-25T11:30:00.000Z" }
+ * //     { "id": "f1", "resourceId": "123", "feedbackText": "Tolle Einführung!", "userId": "tom", "timestamp": "2025-08-20T09:00:00Z" }
  * //   ]
  * // }
- * @example
- * // Request: GET /resources/nonExistentId
- * // Response (Status: 404 Not Found):
- * // { "message": "Resource not found" }
  */
-router.get('/:id', (req, res) => {
-    const resources = readData(resourcesFilePath);
-    const feedback = readData(feedbackFilePath);
+router.get('/:id', async (req, res, next) => {
+  try {
+    const resourceId = req.params.id;
 
-    const resource = resources.find(r => r.id === req.params.id);
+    const resources = await readData(RESOURCES_FILE);
+    const ratings   = await readData(RATINGS_FILE);
+    const feedback  = await readData(FEEDBACK_FILE);
 
-    if (resource) {
-        // Attach feedback entries specific to this resource.
-        resource.feedback = feedback.filter(f => f.resourceId === resource.id);
-        res.json(resource);
-    } else {
-        res.status(404).json({ message: 'Resource not found' });
+    const resource = resources.find(r => String(r.id) === String(resourceId));
+    if (!resource) {
+      res.status(404).json({ error: `Ressource mit ID ${resourceId} nicht gefunden.` });
+      return;
     }
+
+    // Hier voll anreichern (averageRating + feedback)
+    const enriched = buildEnrichedResource(resource, ratings, feedback);
+    res.status(200).json(enriched);
+  } catch (error) {
+    console.error(`Fehler beim Abrufen der Ressource mit ID ${req.params.id}:`, error);
+    next(error);
+  }
 });
 
-// --- FEEDBACK AND RATING ENDPOINTS ---
+/**
+ * @route POST /
+ * @summary Erstellt eine neue Ressource.
+ * @description
+ * Nimmt Ressourcendaten im Request-Body entgegen, generiert eine UUID und speichert die Ressource.
+ * Die Antwort enthält die neu erstellte Ressource (ohne Ratings/Feedback, da noch nicht vorhanden).
+ *
+ * Validierung erfolgt über die `validateResource`-Middleware.
+ *
+ * @access Public
+ * @param {Object} req.body - Die Daten der neuen Ressource (z. B. { title, type, authorId, ... }).
+ * @returns {Object} 201 - Das neu erstellte Ressourcenobjekt.
+ * @returns {Object} 400 - Ungültige oder fehlende Ressourcendaten.
+ * @returns {Object} 500 - Interner Serverfehler.
+ */
+router.post('/', validateResource, async (req, res, next) => {
+  const newResourceData = req.body;
+
+  const newResource = {
+    id: uuidv4(),
+    ...newResourceData,
+    createdAt: new Date().toISOString()
+  };
+
+  try {
+    const resources = await readData(RESOURCES_FILE);
+    resources.push(newResource);
+    await writeData(RESOURCES_FILE, resources);
+    res.status(201).json(newResource);
+  } catch (error) {
+    console.error('Fehler beim Erstellen einer Ressource:', error);
+    next(error);
+  }
+});
 
 /**
- * @route POST /resources/:resourceId/feedback
- * @description **Submits new feedback (including a rating) for a specified resource.**
- * This endpoint requires a `comment`, `rating` (a numerical value), and an `author`
- * in the request body to create a new feedback entry.
- * @access Private (typically requires user authentication and possibly authorization)
- * @param {string} req.params.resourceId - The unique ID of the resource to which this feedback applies.
- * @body {string} comment - The textual content of the feedback or review.
- * @body {number} rating - A numerical score or rating for the resource (e.g., 1 to 5).
- * @body {string} author - The name or identifier of the user submitting the feedback.
- * @returns {Object} 201 - The newly created feedback item, including its generated unique ID
- * and the timestamp of submission.
- * @returns {Object} 400 - If any of the mandatory fields (`comment`, `rating`, `author`) are
- * missing or invalid in the request body.
- * @returns {Object} 404 - If the `resourceId` provided in the URL does not match an existing resource.
- * @example
- * // Request: POST /resources/resource-123/feedback
- * // Request Body: { "comment": "This tutorial greatly improved my understanding!", "rating": 5, "author": "NewDev" }
- * // Response (Status: 201 Created):
- * // {
- * //   "id": "new-uuid-string-1234",
- * //   "resourceId": "resource-123",
- * //   "comment": "This tutorial greatly improved my understanding!",
- * //   "rating": 5,
- * //   "author": "NewDev",
- * //   "timestamp": "2023-08-25T15:45:00.000Z"
- * // }
- * @example
- * // Request: POST /resources/nonExistentId/feedback
- * // Request Body: { "comment": "test", "rating": 3, "author": "anon" }
- * // Response (Status: 404 Not Found):
- * // { "message": "Resource not found." }
+ * @route PUT /:id
+ * @summary Aktualisiert eine bestehende Ressource vollständig oder teilweise
+ *          **und gibt die angereicherte Ressource zurück**.
+ * @description
+ * Nimmt die Ressourcen-ID aus den Parametern und die zu aktualisierenden Daten im Body entgegen.
+ * Antwortet mit der **aktualisierten Ressource**, angereichert um `averageRating` & `feedback`.
+ *
+ * @access Public
+ * @param {string} req.params.id - Die ID der zu aktualisierenden Ressource.
+ * @param {Object} req.body - Die neuen Daten für die Ressource.
+ * @returns {Object} 200 - Die aktualisierte, angereicherte Ressource.
+ * @returns {Object} 400 - Keine Daten zum Aktualisieren vorhanden oder ungültige Daten.
+ * @returns {Object} 404 - Ressource nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
  */
-router.post('/:resourceId/feedback', (req, res) => {
-    const { resourceId } = req.params;
-    const { comment, rating, author } = req.body;
+router.put('/:id', async (req, res, next) => {
+  const resourceId = req.params.id;
+  const newData = req.body;
 
-    // Validate the presence of all required feedback fields.
-    if (!comment || rating === undefined || rating === null || !author) {
-        return res.status(400).json({ message: 'Comment, rating (number), and author are required fields.' });
+  if (!newData || Object.keys(newData).length === 0) {
+    res.status(400).json({ error: 'Keine Daten zum Aktualisieren vorhanden.' });
+    return;
+  }
+
+  try {
+    const resources = await readData(RESOURCES_FILE);
+    const idx = resources.findIndex(r => String(r.id) === String(resourceId));
+
+    if (idx === -1) {
+      res.status(404).json({ error: `Ressource mit ID ${resourceId} nicht gefunden.` });
+      return;
     }
 
-    const resources = readData(resourcesFilePath);
-    const resourceExists = resources.some(r => r.id === resourceId);
+    resources[idx] = { ...resources[idx], ...newData, updatedAt: new Date().toISOString() };
+    await writeData(RESOURCES_FILE, resources);
 
-    if (!resourceExists) {
-        return res.status(404).json({ message: 'Resource not found.' });
+    // Enriched response (read latest ratings & feedback)
+    const ratings  = await readData(RATINGS_FILE);
+    const feedback = await readData(FEEDBACK_FILE);
+    const enriched = buildEnrichedResource(resources[idx], ratings, feedback);
+
+    res.status(200).json(enriched);
+  } catch (error) {
+    console.error(`Fehler beim Aktualisieren der Ressource mit ID ${req.params.id}:`, error);
+    next(error);
+  }
+});
+
+/**
+ * @route DELETE /:id
+ * @summary Löscht eine Ressource anhand ihrer ID.
+ * @description
+ * Entfernt eine Ressource permanent aus dem Katalog.
+ *
+ * @access Public
+ * @param {string} req.params.id - Die ID der zu löschenden Ressource.
+ * @returns {Object} 204 - Erfolgreich gelöscht (kein Inhalt).
+ * @returns {Object} 404 - Ressource nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
+ */
+router.delete('/:id', async (req, res, next) => {
+  const resourceId = req.params.id;
+
+  try {
+    let resources = await readData(RESOURCES_FILE);
+    const initialLength = resources.length;
+
+    resources = resources.filter(r => String(r.id) !== String(resourceId));
+
+    if (resources.length === initialLength) {
+      res.status(404).json({ error: `Ressource mit ID ${resourceId} nicht gefunden.` });
+      return;
     }
 
-    const feedback = readData(feedbackFilePath);
-    const newFeedback = {
-        id: uuidv4(), // Assign a unique ID using uuid library
-        resourceId,
-        comment,
-        rating: parseInt(rating, 10), // Ensure rating is stored as an integer
-        author,
-        timestamp: new Date().toISOString() // Capture the current UTC timestamp
-    };
+    await writeData(RESOURCES_FILE, resources);
+    res.status(204).end();
+  } catch (error) {
+    console.error(`Fehler beim Löschen der Ressource mit ID ${req.params.id}:`, error);
+    next(error);
+  }
+});
+
+// --- RATING ENDPOINTS ---
+
+/**
+ * @route POST /:resourceId/ratings
+ * @summary Fügt einer Ressource eine neue Bewertung hinzu **und gibt die angereicherte Ressource zurück**.
+ * @description
+ * Nimmt Bewertungsdaten (`ratingValue`, `userId`) entgegen, generiert eine UUID und speichert die Bewertung.
+ * **Antwort:** Die **aktualisierte Ressource** (mit `averageRating` und vollständigem `feedback`-Array).
+ *
+ * Validierung erfolgt über die `validateRating`-Middleware.
+ *
+ * @access Public
+ * @param {string} req.params.resourceId - Die ID der Ressource, die bewertet wird.
+ * @param {Object} req.body - Die Bewertungsdaten ({ ratingValue: number, userId?: string }).
+ * @returns {Object} 201 - Die aktualisierte, angereicherte Ressource.
+ * @returns {Object} 400 - Ungültige oder fehlende Bewertungsdaten.
+ * @returns {Object} 404 - Ressource nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
+ *
+ * @example
+ * // Request: POST /resources/123/ratings
+ * // Body: { "ratingValue": 5, "userId": "alice" }
+ * // Response (201): { id, title, ..., averageRating: 4.7, feedback: [...] }
+ */
+router.post('/:resourceId/ratings', validateRating, async (req, res, next) => {
+  const resourceId = req.params.resourceId;
+  const { ratingValue, userId } = req.body;
+
+  const newRating = {
+    id: uuidv4(),
+    resourceId: String(resourceId),
+    ratingValue: Number(ratingValue),
+    userId: userId ? String(userId) : 'anonymous',
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    // Validieren, dass die Ressource existiert
+    const resources = await readData(RESOURCES_FILE);
+    const resource = resources.find(r => String(r.id) === String(resourceId));
+    if (!resource) {
+      res.status(404).json({ error: `Ressource mit ID ${resourceId} nicht gefunden.` });
+      return;
+    }
+
+    const ratings  = await readData(RATINGS_FILE);
+    const feedback = await readData(FEEDBACK_FILE);
+
+    ratings.push(newRating);
+    await writeData(RATINGS_FILE, ratings);
+
+    const enriched = buildEnrichedResource(resource, ratings, feedback);
+    res.status(201).json(enriched);
+  } catch (error) {
+    console.error(`Fehler beim Hinzufügen einer Bewertung für Ressource ${req.params.resourceId}:`, error);
+    next(error);
+  }
+});
+
+// --- FEEDBACK ENDPOINTS ---
+
+/**
+ * @route POST /:resourceId/feedback
+ * @summary Fügt einer Ressource ein neues Feedback hinzu **und gibt die angereicherte Ressource zurück**.
+ * @description
+ * Nimmt Feedback-Text und optional eine Benutzer-ID entgegen, generiert eine UUID und speichert das Feedback.
+ * **Antwort:** Die **aktualisierte Ressource** (mit `averageRating` und vollständigem `feedback`-Array).
+ *
+ * Validierung erfolgt über die `validateFeedback`-Middleware.
+ *
+ * @access Public
+ * @param {string} req.params.resourceId - Die ID der Ressource, für die Feedback gegeben wird.
+ * @param {Object} req.body - Die Feedback-Daten ({ feedbackText: string, userId?: string }).
+ * @returns {Object} 201 - Die aktualisierte, angereicherte Ressource.
+ * @returns {Object} 400 - Ungültige oder fehlende Feedback-Daten.
+ * @returns {Object} 404 - Ressource nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
+ *
+ * @example
+ * // Request: POST /resources/123/feedback
+ * // Body: { "feedbackText": "Super erklärt!", "userId": "bob" }
+ * // Response (201): { id, title, ..., averageRating, feedback: [ ...neu hinzugefügter Eintrag..., ... ] }
+ */
+router.post('/:resourceId/feedback', validateFeedback, async (req, res, next) => {
+  const resourceId = req.params.resourceId;
+  const { feedbackText, userId } = req.body;
+
+  const newFeedback = {
+    id: uuidv4(),
+    resourceId: String(resourceId),
+    feedbackText: String(feedbackText).trim(),
+    userId: userId ? String(userId) : 'anonymous',
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    // Validieren, dass die Ressource existiert
+    const resources = await readData(RESOURCES_FILE);
+    const resource = resources.find(r => String(r.id) === String(resourceId));
+    if (!resource) {
+      res.status(404).json({ error: `Ressource mit ID ${resourceId} nicht gefunden.` });
+      return;
+    }
+
+    const ratings  = await readData(RATINGS_FILE);
+    const feedback = await readData(FEEDBACK_FILE);
 
     feedback.push(newFeedback);
-    writeData(feedbackFilePath, feedback);
+    await writeData(FEEDBACK_FILE, feedback);
 
-    res.status(201).json(newFeedback);
+    const enriched = buildEnrichedResource(resource, ratings, feedback);
+    res.status(201).json(enriched);
+  } catch (error) {
+    console.error(`Fehler beim Hinzufügen von Feedback für Ressource ${req.params.resourceId}:`, error);
+    next(error);
+  }
 });
 
 /**
- * @route PUT /resources/:resourceId/feedback/:feedbackId
- * @description **Updates an existing feedback entry for a specific resource.**
- * This endpoint allows for partial modifications to a feedback's `comment` or `rating`.
- * The `feedbackId` must correspond to an entry within the specified `resourceId`.
- * @access Private (typically requires authentication and authorization to edit one's own feedback)
- * @param {string} req.params.resourceId - The ID of the resource that owns the feedback to be updated.
- * @param {string} req.params.feedbackId - The unique ID of the specific feedback entry to modify.
- * @body {string} [comment] - The new textual content for the feedback (optional field for update).
- * @body {number} [rating] - The new numerical rating for the feedback (optional field for update).
- * @returns {Object} 200 - The fully updated feedback item.
- * @returns {Object} 404 - If the `resourceId` is not found, or if the `feedbackId` does not
- * exist under the specified `resourceId`.
- * @example
- * // Request: PUT /resources/resource-123/feedback/feedback-a1
- * // Request Body: { "comment": "It's even better than I first thought!", "rating": 5 }
- * // Response (Status: 200 OK):
- * // {
- * //   "id": "feedback-a1",
- * //   "resourceId": "resource-123",
- * //   "comment": "It's even better than I first thought!",
- * //   "rating": 5,
- * //   "author": "devUser",
- * //   "timestamp": "2023-08-25T10:00:00.000Z"
- * // }
- * @example
- * // Request: PUT /resources/resource-123/feedback/nonExistentFeedbackId
- * // Request Body: { "rating": 2 }
- * // Response (Status: 404 Not Found):
- * // { "message": "Feedback not found for this resource." }
+ * @route PUT /:resourceId/feedback/:feedbackId
+ * @summary Aktualisiert ein bestehendes Feedback für eine Ressource.
+ * @description
+ * Aktualisiert den `feedbackText` eines Feedback-Eintrags und setzt den `timestamp` neu.
+ * **Hinweis:** Diese Route gibt den **aktualisierten Feedback-Eintrag** zurück (nicht die ganze Ressource).
+ *
+ * @access Public
+ * @param {string} req.params.resourceId - Die ID der Ressource, zu der das Feedback gehört.
+ * @param {string} req.params.feedbackId - Die ID des zu aktualisierenden Feedbacks.
+ * @param {Object} req.body - Die aktualisierten Feedback-Daten ({ feedbackText: string }).
+ * @returns {Object} 200 - Das aktualisierte Feedback-Objekt.
+ * @returns {Object} 400 - Ungültige oder fehlende Feedback-Daten.
+ * @returns {Object} 404 - Feedback nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
  */
-router.put('/:resourceId/feedback/:feedbackId', (req, res) => {
-    const { resourceId, feedbackId } = req.params;
-    const updates = req.body; // Contains fields to be updated, e.g., 'comment' or 'rating'
+router.put('/:resourceId/feedback/:feedbackId', validateFeedback, async (req, res, next) => {
+  const resourceId = req.params.resourceId;
+  const feedbackId = req.params.feedbackId;
+  const { feedbackText } = req.body;
 
-    const resources = readData(resourcesFilePath);
-    const resourceExists = resources.some(r => r.id === resourceId);
-
-    if (!resourceExists) {
-        return res.status(404).json({ message: 'Resource not found.' });
-    }
-
-    let feedback = readData(feedbackFilePath);
-    const feedbackIndex = feedback.findIndex(
-        f => f.id === feedbackId && f.resourceId === resourceId
+  try {
+    const feedback = await readData(FEEDBACK_FILE);
+    const idx = feedback.findIndex(
+      f => String(f.id) === String(feedbackId) && String(f.resourceId) === String(resourceId)
     );
 
-    if (feedbackIndex !== -1) {
-        // Apply updates to the found feedback entry.
-        // Explicitly convert `rating` to an integer if it's present in the updates.
-        const updatedFeedback = { ...feedback[feedbackIndex], ...updates };
-        if (updatedFeedback.rating !== undefined && updatedFeedback.rating !== null) {
-             updatedFeedback.rating = parseInt(updatedFeedback.rating, 10);
-        }
-        feedback[feedbackIndex] = updatedFeedback;
-        writeData(feedbackFilePath, feedback);
-        res.json(feedback[feedbackIndex]);
-    } else {
-        res.status(404).json({ message: 'Feedback not found for this resource.' });
+    if (idx === -1) {
+      res.status(404).json({ error: `Feedback mit ID ${feedbackId} für Ressource ${resourceId} nicht gefunden.` });
+      return;
     }
+
+    feedback[idx] = {
+      ...feedback[idx],
+      feedbackText: String(feedbackText).trim(),
+      timestamp: new Date().toISOString()
+    };
+
+    await writeData(FEEDBACK_FILE, feedback);
+    res.status(200).json(feedback[idx]);
+  } catch (error) {
+    console.error(`Fehler beim Aktualisieren von Feedback ${req.params.feedbackId} für Ressource ${req.params.resourceId}:`, error);
+    next(error);
+  }
 });
 
 /**
- * @route DELETE /resources/:resourceId/feedback/:feedbackId
- * @description **Deletes a specific feedback entry associated with a given resource.**
- * Both the `resourceId` and `feedbackId` must correctly identify an existing feedback entry
- * for the deletion to succeed.
- * @access Private (typically requires authentication and authorization to delete one's own or moderated feedback)
- * @param {string} req.params.resourceId - The ID of the resource from which feedback will be deleted.
- * @param {string} req.params.feedbackId - The unique ID of the specific feedback entry to remove.
- * @returns {Object} 200 - A success message confirming the feedback was deleted.
- * @returns {Object} 404 - If the `resourceId` is not found, or if the `feedbackId` does not
- * exist under the specified `resourceId`.
- * @example
- * // Request: DELETE /resources/resource-123/feedback/feedback-b2
- * // Response (Status: 200 OK):
- * // { "message": "Feedback deleted successfully." }
- * @example
- * // Request: DELETE /resources/resource-123/feedback/nonExistentFeedbackId
- * // Response (Status: 404 Not Found):
- * // { "message": "Feedback not found for this resource." }
+ * @route DELETE /:resourceId/feedback/:feedbackId
+ * @summary Löscht ein Feedback für eine bestimmte Ressource.
+ * @description
+ * Entfernt einen Feedback-Eintrag anhand seiner ID und der zugehörigen Ressourcen-ID.
+ *
+ * @access Public
+ * @param {string} req.params.resourceId - Die ID der Ressource, zu der das Feedback gehört.
+ * @param {string} req.params.feedbackId - Die ID des zu löschenden Feedbacks.
+ * @returns {Object} 204 - Erfolgreich gelöscht (kein Inhalt).
+ * @returns {Object} 404 - Feedback nicht gefunden.
+ * @returns {Object} 500 - Interner Serverfehler.
  */
-router.delete('/:resourceId/feedback/:feedbackId', (req, res) => {
-    const { resourceId, feedbackId } = req.params;
+router.delete('/:resourceId/feedback/:feedbackId', async (req, res, next) => {
+  const resourceId = req.params.resourceId;
+  const feedbackId = req.params.feedbackId;
 
-    const resources = readData(resourcesFilePath);
-    const resourceExists = resources.some(r => r.id === resourceId);
-
-    if (!resourceExists) {
-        return res.status(404).json({ message: 'Resource not found.' });
-    }
-
-    let feedback = readData(feedbackFilePath);
+  try {
+    let feedback = await readData(FEEDBACK_FILE);
     const initialLength = feedback.length;
-    // Filters out the specific feedback item to be deleted based on both IDs.
-    feedback = feedback.filter(f => !(f.id === feedbackId && f.resourceId === resourceId));
 
-    if (feedback.length < initialLength) {
-        // If the array length changed, it means an item was successfully removed.
-        writeData(feedbackFilePath, feedback);
-        res.status(200).json({ message: 'Feedback deleted successfully.' });
-    } else {
-        res.status(404).json({ message: 'Feedback not found for this resource.' });
+    feedback = feedback.filter(
+      f => !(String(f.id) === String(feedbackId) && String(f.resourceId) === String(resourceId))
+    );
+
+    if (feedback.length === initialLength) {
+      res.status(404).json({ error: `Feedback mit ID ${feedbackId} für Ressource ${resourceId} nicht gefunden.` });
+      return;
     }
+
+    await writeData(FEEDBACK_FILE, feedback);
+    res.status(204).end();
+  } catch (error) {
+    console.error(`Fehler beim Löschen von Feedback ${req.params.feedbackId} für Ressource ${req.params.resourceId}:`, error);
+    next(error);
+  }
 });
 
 export default router;
