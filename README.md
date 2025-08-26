@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the Repository:** First, clone the project repository to your local machine:
     
-    ```
+    ```bash
     git clone <repository_url>
     cd resource-catalog-service # Replace with your actual project directory name
     
@@ -42,14 +42,14 @@ Before you begin, ensure you have the following installed:
     
 2. **Install Dependencies:** Navigate into the project directory and install the necessary Node.js packages:
     
-    ```
+    ```bash
     npm install
     
     ```
     
 3. **Set up Test Data (Optional but Recommended):** If you're using a local file-based data store or need initial data for your database, you can use the test data provided previously. Create a `data` directory (if it doesn't exist) in your project root and place the `resources.json`, `ratings.json`, and `feedback.json` files inside it.
     
-    ```
+    ```bash
     .
     ├── src/
     ├── data/
@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed:
     
 4. **Start the Service:** Run the service using the start script defined in your `package.json`:
     
-    ```
+    ```bash
     npm start
     
     ```
@@ -77,7 +77,7 @@ Before you begin, ensure you have the following installed:
 
 To run the automated tests for the service:
 
-```
+```bash
 npm test
 
 ```
