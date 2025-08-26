@@ -5,12 +5,6 @@
     "type": "Course",
     "description": "A comprehensive beginner-friendly course covering Python fundamentals, data structures, and basic algorithms.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "Python",
-      "Programming Basics",
-      "Data Structures"
-    ],
-    "url": "https://example.com/python-intro",
     "createdAt": "2024-01-15T10:00:00.000Z"
   },
   {
@@ -19,12 +13,6 @@
     "type": "Video Series",
     "description": "Dive deep into closures, prototypes, asynchronous JavaScript, and more.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "JavaScript",
-      "Web Development",
-      "Frontend"
-    ],
-    "url": "https://example.com/advanced-js",
     "createdAt": "2024-02-01T11:30:00.000Z"
   },
   {
@@ -33,12 +21,6 @@
     "type": "Tutorial",
     "description": "Learn to build powerful React applications using functional components and hooks.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "React",
-      "Frontend",
-      "JavaScript"
-    ],
-    "url": "https://example.com/react-hooks",
     "createdAt": "2024-03-10T09:15:00.000Z"
   },
   {
@@ -47,12 +29,6 @@
     "type": "Book",
     "description": "A practical guide to data manipulation and analysis using the Pandas library in Python.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Data Science",
-      "Python",
-      "Data Analysis"
-    ],
-    "url": "https://example.com/pandas-book",
     "createdAt": "2024-01-20T14:00:00.000Z"
   },
   {
@@ -61,12 +37,6 @@
     "type": "Course",
     "description": "Understand relational databases and write effective SQL queries for data extraction.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "SQL",
-      "Databases",
-      "Data Analysis"
-    ],
-    "url": "https://example.com/sql-for-data",
     "createdAt": "2024-02-25T16:00:00.000Z"
   },
   {
@@ -75,12 +45,6 @@
     "type": "Video",
     "description": "Learn the basics of containerization with Docker, from images to running containers.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "DevOps",
-      "Docker",
-      "Cloud Computing"
-    ],
-    "url": "https://example.com/docker-basics",
     "createdAt": "2024-03-05T10:00:00.000Z"
   },
   {
@@ -89,12 +53,6 @@
     "type": "Article",
     "description": "Explore different approaches to testing your frontend applications effectively.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "Frontend",
-      "Testing",
-      "JavaScript"
-    ],
-    "url": "https://example.com/frontend-testing",
     "createdAt": "2024-04-01T13:00:00.000Z"
   },
   {
@@ -103,12 +61,6 @@
     "type": "Course",
     "description": "An introduction to the core services and concepts of Amazon Web Services.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Cloud Computing",
-      "AWS",
-      "Infrastructure"
-    ],
-    "url": "https://example.com/aws-fundamentals",
     "createdAt": "2024-01-10T08:00:00.000Z"
   },
   {
@@ -117,12 +69,6 @@
     "type": "Book",
     "description": "Implement popular machine learning algorithms using Python's Scikit-learn library.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Machine Learning",
-      "Python",
-      "Data Science"
-    ],
-    "url": "https://example.com/sklearn-ml",
     "createdAt": "2024-03-20T11:00:00.000Z"
   },
   {
@@ -131,12 +77,6 @@
     "type": "Tutorial",
     "description": "Master branching, merging, and collaborative workflows with Git and GitHub.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Git",
-      "Version Control",
-      "DevOps"
-    ],
-    "url": "https://example.com/git-github",
     "createdAt": "2024-02-14T14:30:00.000Z"
   },
   {
@@ -145,13 +85,6 @@
     "type": "Course",
     "description": "Learn to create robust and scalable APIs using Node.js and the Express framework.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "Node.js",
-      "Express.js",
-      "Backend",
-      "API Development"
-    ],
-    "url": "https://example.com/nodejs-express-api",
     "createdAt": "2024-04-05T09:00:00.000Z"
   },
   {
@@ -160,13 +93,6 @@
     "type": "Video Series",
     "description": "A deep dive into deploying, managing, and scaling containerized applications with Kubernetes.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "Kubernetes",
-      "DevOps",
-      "Container Orchestration",
-      "Cloud Computing"
-    ],
-    "url": "https://example.com/kubernetes-explained",
     "createdAt": "2024-03-18T15:00:00.000Z"
   },
   {
@@ -175,12 +101,6 @@
     "type": "Tutorial",
     "description": "Create interactive and dynamic data visualizations using the D3.js library.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Data Visualization",
-      "JavaScript",
-      "Frontend"
-    ],
-    "url": "https://example.com/d3js-viz",
     "createdAt": "2024-01-28T10:45:00.000Z"
   },
   {
@@ -189,12 +109,6 @@
     "type": "Book",
     "description": "Learn the basics of cybersecurity and ethical hacking methodologies.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Cybersecurity",
-      "Ethical Hacking",
-      "Network Security"
-    ],
-    "url": "https://example.com/ethical-hacking-book",
     "createdAt": "2024-02-08T12:00:00.000Z"
   },
   {
@@ -203,12 +117,6 @@
     "type": "Course",
     "description": "Understand user experience and user interface principles for effective design.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "UX Design",
-      "UI Design",
-      "Product Design"
-    ],
-    "url": "https://example.com/uxui-fundamentals",
     "createdAt": "2024-03-22T16:00:00.000Z"
   },
   {
@@ -217,12 +125,6 @@
     "type": "Article",
     "description": "Explore common patterns and best practices for designing microservices.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "Microservices",
-      "System Design",
-      "Backend"
-    ],
-    "url": "https://example.com/microservices-patterns",
     "createdAt": "2024-04-10T10:00:00.000Z"
   },
   {
@@ -231,13 +133,6 @@
     "type": "Tutorial",
     "description": "A step-by-step guide to creating a professional web development portfolio.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Frontend"
-    ],
-    "url": "https://example.com/portfolio-guide",
     "createdAt": "2024-02-01T09:00:00.000Z"
   },
   {
@@ -246,12 +141,6 @@
     "type": "Course",
     "description": "Learn to write efficient and concurrent backend services using Go.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Go",
-      "Backend",
-      "Concurrency"
-    ],
-    "url": "https://example.com/go-backend",
     "createdAt": "2024-03-01T11:00:00.000Z"
   },
   {
@@ -260,13 +149,6 @@
     "type": "Video Series",
     "description": "From neural networks to advanced deep learning models using TensorFlow.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Deep Learning",
-      "TensorFlow",
-      "Machine Learning",
-      "Python"
-    ],
-    "url": "https://example.com/tensorflow-dl",
     "createdAt": "2024-01-25T15:00:00.000Z"
   },
   {
@@ -275,12 +157,6 @@
     "type": "Article",
     "description": "An overview of Scrum and Kanban and how to apply them in your projects.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Agile",
-      "Project Management",
-      "Software Development"
-    ],
-    "url": "https://example.com/agile-methods",
     "createdAt": "2024-02-10T10:30:00.000Z"
   },
   {
@@ -289,12 +165,6 @@
     "type": "Book",
     "description": "A guide to designing efficient and scalable relational databases.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "Databases",
-      "Database Design",
-      "SQL"
-    ],
-    "url": "https://example.com/database-design",
     "createdAt": "2024-04-15T11:00:00.000Z"
   },
   {
@@ -303,12 +173,6 @@
     "type": "Course",
     "description": "Learn to build inclusive web experiences for all users.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "Web Accessibility",
-      "Frontend",
-      "UX Design"
-    ],
-    "url": "https://example.com/web-accessibility",
     "createdAt": "2024-03-08T14:00:00.000Z"
   },
   {
@@ -317,13 +181,6 @@
     "type": "Tutorial",
     "description": "Develop and deploy serverless functions using AWS Lambda and API Gateway.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Serverless",
-      "AWS",
-      "Cloud Computing",
-      "Backend"
-    ],
-    "url": "https://example.com/aws-lambda",
     "createdAt": "2024-02-20T10:00:00.000Z"
   },
   {
@@ -332,15 +189,6 @@
     "type": "Course",
     "description": "Build a complete web application using MongoDB, Express, React, and Node.js.",
     "authorId": "auth-david",
-    "skillTags": [
-      "MERN Stack",
-      "Full-Stack",
-      "MongoDB",
-      "Express.js",
-      "React",
-      "Node.js"
-    ],
-    "url": "https://example.com/mern-stack",
     "createdAt": "2024-01-05T09:30:00.000Z"
   },
   {
@@ -349,12 +197,6 @@
     "type": "Video Series",
     "description": "Tools and techniques for building data pipelines and ETL processes with Python.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Python",
-      "Data Engineering",
-      "ETL"
-    ],
-    "url": "https://example.com/python-data-eng",
     "createdAt": "2024-04-01T16:00:00.000Z"
   },
   {
@@ -363,12 +205,6 @@
     "type": "Tutorial",
     "description": "A quick introduction to the Vue.js framework for building reactive user interfaces.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "Vue.js",
-      "Frontend",
-      "JavaScript"
-    ],
-    "url": "https://example.com/vuejs-intro",
     "createdAt": "2024-03-12T08:30:00.000Z"
   },
   {
@@ -377,12 +213,6 @@
     "type": "Article",
     "description": "Understand Continuous Integration and Continuous Delivery for modern software deployment.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "DevOps",
-      "CI/CD",
-      "Automation"
-    ],
-    "url": "https://example.com/cicd-pipelines",
     "createdAt": "2024-01-30T13:00:00.000Z"
   },
   {
@@ -391,12 +221,6 @@
     "type": "Course",
     "description": "Learn to write highly performant SQL queries and optimize database operations.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "SQL",
-      "Databases",
-      "Performance Optimization"
-    ],
-    "url": "https://example.com/sql-optimization",
     "createdAt": "2024-02-18T11:00:00.000Z"
   },
   {
@@ -405,12 +229,6 @@
     "type": "Book",
     "description": "A practical guide to building NLP applications using the spaCy library in Python.",
     "authorId": "auth-david",
-    "skillTags": [
-      "NLP",
-      "Python",
-      "Machine Learning"
-    ],
-    "url": "https://example.com/spacy-nlp",
     "createdAt": "2024-03-25T14:00:00.000Z"
   },
   {
@@ -419,12 +237,6 @@
     "type": "Video",
     "description": "Essential guidelines for securing your applications and data in the cloud.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Cloud Security",
-      "Cybersecurity",
-      "Cloud Computing"
-    ],
-    "url": "https://example.com/cloud-security-best",
     "createdAt": "2024-01-10T09:00:00.000Z"
   },
   {
@@ -433,12 +245,6 @@
     "type": "Course",
     "description": "Build cross-platform mobile applications using JavaScript and React Native.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "React Native",
-      "Mobile Development",
-      "JavaScript"
-    ],
-    "url": "https://example.com/react-native-dev",
     "createdAt": "2024-04-08T10:00:00.000Z"
   },
   {
@@ -447,12 +253,6 @@
     "type": "Tutorial",
     "description": "Strategies and common patterns for tackling system design interview questions.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "System Design",
-      "Interview Prep",
-      "Architecture"
-    ],
-    "url": "https://example.com/system-design-prep",
     "createdAt": "2024-03-03T15:30:00.000Z"
   },
   {
@@ -461,12 +261,6 @@
     "type": "Article",
     "description": "Understand the core concepts of blockchain, cryptocurrencies, and decentralized applications.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Blockchain",
-      "Distributed Systems",
-      "Cryptography"
-    ],
-    "url": "https://example.com/blockchain-intro",
     "createdAt": "2024-02-15T12:00:00.000Z"
   },
   {
@@ -475,13 +269,6 @@
     "type": "Course",
     "description": "Learn to process and analyze large datasets efficiently using Apache Spark.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Big Data",
-      "Apache Spark",
-      "Data Engineering",
-      "Scala"
-    ],
-    "url": "https://example.com/spark-bigdata",
     "createdAt": "2024-01-18T10:00:00.000Z"
   },
   {
@@ -490,11 +277,6 @@
     "type": "Video Series",
     "description": "Basic concepts of cybersecurity, threats, and defensive measures.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Cybersecurity",
-      "Information Security"
-    ],
-    "url": "https://example.com/cybersecurity-intro",
     "createdAt": "2024-03-28T14:00:00.000Z"
   },
   {
@@ -503,13 +285,6 @@
     "type": "Book",
     "description": "Best practices for using TypeScript to build robust and maintainable large-scale applications.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "TypeScript",
-      "JavaScript",
-      "Frontend",
-      "Backend"
-    ],
-    "url": "https://example.com/advanced-typescript",
     "createdAt": "2024-04-03T11:30:00.000Z"
   },
   {
@@ -518,12 +293,6 @@
     "type": "Tutorial",
     "description": "Techniques and tools to make your web applications load faster and run smoother.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "Frontend",
-      "Performance",
-      "Web Development"
-    ],
-    "url": "https://example.com/frontend-perf",
     "createdAt": "2024-01-22T10:00:00.000Z"
   },
   {
@@ -532,12 +301,6 @@
     "type": "Course",
     "description": "Essential concepts for problem-solving in computer science.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Data Structures",
-      "Algorithms",
-      "Programming Basics"
-    ],
-    "url": "https://example.com/dsa-intro",
     "createdAt": "2024-03-15T09:00:00.000Z"
   },
   {
@@ -546,12 +309,6 @@
     "type": "Video Series",
     "description": "An introduction to the principles and algorithms of reinforcement learning.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Reinforcement Learning",
-      "Machine Learning",
-      "AI"
-    ],
-    "url": "https://example.com/rl-fundamentals",
     "createdAt": "2024-02-05T14:30:00.000Z"
   },
   {
@@ -560,12 +317,6 @@
     "type": "Tutorial",
     "description": "Learn to manage your software projects effectively using Jira.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Project Management",
-      "Agile",
-      "Jira"
-    ],
-    "url": "https://example.com/jira-pm",
     "createdAt": "2024-01-29T10:00:00.000Z"
   },
   {
@@ -574,12 +325,6 @@
     "type": "Article",
     "description": "Understand and apply common design patterns in your JavaScript code.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "JavaScript",
-      "Design Patterns",
-      "Software Architecture"
-    ],
-    "url": "https://example.com/js-design-patterns",
     "createdAt": "2024-04-12T13:00:00.000Z"
   },
   {
@@ -588,13 +333,6 @@
     "type": "Course",
     "description": "Build flexible and efficient APIs using GraphQL with Node.js.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "GraphQL",
-      "API Development",
-      "Node.js",
-      "Backend"
-    ],
-    "url": "https://example.com/graphql-api",
     "createdAt": "2024-03-06T16:00:00.000Z"
   },
   {
@@ -603,13 +341,6 @@
     "type": "Tutorial",
     "description": "Learn how to effectively test your microservices using popular JavaScript testing frameworks.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Microservices",
-      "Testing",
-      "Node.js",
-      "Jest"
-    ],
-    "url": "https://example.com/microservices-testing",
     "createdAt": "2024-02-22T09:00:00.000Z"
   },
   {
@@ -618,12 +349,6 @@
     "type": "Book",
     "description": "Explore the concepts and architecture of data warehouses for business intelligence.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Data Warehousing",
-      "Business Intelligence",
-      "Databases"
-    ],
-    "url": "https://example.com/data-warehousing-book",
     "createdAt": "2024-01-12T11:00:00.000Z"
   },
   {
@@ -632,13 +357,6 @@
     "type": "Video",
     "description": "Best practices for securing your containerized applications deployed on Kubernetes.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "Kubernetes",
-      "Container Security",
-      "Cybersecurity",
-      "DevOps"
-    ],
-    "url": "https://example.com/kube-security",
     "createdAt": "2024-03-30T10:00:00.000Z"
   },
   {
@@ -647,13 +365,6 @@
     "type": "Course",
     "description": "Master modern CSS layout techniques for responsive web design.",
     "authorId": "auth-alice",
-    "skillTags": [
-      "CSS",
-      "Frontend",
-      "Responsive Design",
-      "Web Development"
-    ],
-    "url": "https://example.com/css-layouts",
     "createdAt": "2024-02-19T14:00:00.000Z"
   },
   {
@@ -662,13 +373,6 @@
     "type": "Article",
     "description": "Understanding and implementing API Gateways in microservices architecture.",
     "authorId": "auth-bob",
-    "skillTags": [
-      "API Gateway",
-      "Microservices",
-      "Backend",
-      "API Development"
-    ],
-    "url": "https://example.com/api-gateway-impl",
     "createdAt": "2024-04-07T09:30:00.000Z"
   },
   {
@@ -677,12 +381,6 @@
     "type": "Book",
     "description": "A deep dive into Domain-Driven Design principles for complex software systems.",
     "authorId": "auth-charlie",
-    "skillTags": [
-      "Domain-Driven Design",
-      "Software Architecture",
-      "System Design"
-    ],
-    "url": "https://example.com/ddd-fundamentals",
     "createdAt": "2024-03-02T10:00:00.000Z"
   },
   {
@@ -691,12 +389,6 @@
     "type": "Video Series",
     "description": "Explore the basics of quantum mechanics and its application in computing.",
     "authorId": "auth-david",
-    "skillTags": [
-      "Quantum Computing",
-      "Computer Science",
-      "Advanced Topics"
-    ],
-    "url": "https://example.com/quantum-computing-intro",
     "createdAt": "2024-02-28T15:00:00.000Z"
   },
   {
@@ -705,13 +397,6 @@
     "type": "Tutorial",
     "description": "A guide to integrating OAuth 2.0 for secure user authentication and authorization.",
     "authorId": "auth-eve",
-    "skillTags": [
-      "OAuth 2.0",
-      "Security",
-      "Authentication",
-      "Web Development"
-    ],
-    "url": "https://example.com/oauth2-tutorial",
     "createdAt": "2024-01-26T11:00:00.000Z"
   }
 ]
