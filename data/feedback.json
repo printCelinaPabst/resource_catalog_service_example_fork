@@ -1,402 +1,1052 @@
 [
   {
-    "id": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
-    "title": "Introduction to Python Programming",
-    "type": "Course",
-    "description": "A comprehensive beginner-friendly course covering Python fundamentals, data structures, and basic algorithms.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-01-15T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8001",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "feedbackText": "Very helpful for beginners!",
+    "userId": "user-001",
+    "timestamp": "2024-01-20T11:00:00.000Z"
   },
   {
-    "id": "res-06c39f21-7290-4c74-9040-277501a30002",
-    "title": "Advanced JavaScript Concepts",
-    "type": "Video Series",
-    "description": "Dive deep into closures, prototypes, asynchronous JavaScript, and more.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-02-01T11:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8002",
+    "resourceId": "res-06c39f21-7290-4c74-9040-277501a30002",
+    "feedbackText": "Great explanations of async JS.",
+    "userId": "user-002",
+    "timestamp": "2024-02-05T12:30:00.000Z"
   },
   {
-    "id": "res-7d341b53-b097-4f67-a859-58d35e180003",
-    "title": "Mastering React Hooks",
-    "type": "Tutorial",
-    "description": "Learn to build powerful React applications using functional components and hooks.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-03-10T09:15:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8003",
+    "resourceId": "res-7d341b53-b097-4f67-a859-58d35e180003",
+    "feedbackText": "Hooks made easy!",
+    "userId": "user-003",
+    "timestamp": "2024-03-12T10:15:00.000Z"
   },
   {
-    "id": "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
-    "title": "Data Science with Pandas",
-    "type": "Book",
-    "description": "A practical guide to data manipulation and analysis using the Pandas library in Python.",
-    "authorId": "auth-david",
-    "createdAt": "2024-01-20T14:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8004",
+    "resourceId": "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
+    "feedbackText": "Good overview, but could use more examples.",
+    "userId": "user-004",
+    "timestamp": "2024-01-25T14:30:00.000Z"
   },
   {
-    "id": "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
-    "title": "Introduction to SQL for Data Analysts",
-    "type": "Course",
-    "description": "Understand relational databases and write effective SQL queries for data extraction.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-02-25T16:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8005",
+    "resourceId": "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
+    "feedbackText": "Essential for data analysts.",
+    "userId": "user-005",
+    "timestamp": "2024-02-28T16:15:00.000Z"
   },
   {
-    "id": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40006",
-    "title": "Docker for Beginners",
-    "type": "Video",
-    "description": "Learn the basics of containerization with Docker, from images to running containers.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-03-05T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8006",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40006",
+    "feedbackText": "Clear and concise Docker intro.",
+    "userId": "user-006",
+    "timestamp": "2024-03-07T10:45:00.000Z"
   },
   {
-    "id": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0007",
-    "title": "Frontend Testing Strategies",
-    "type": "Article",
-    "description": "Explore different approaches to testing your frontend applications effectively.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-04-01T13:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8007",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0007",
+    "feedbackText": "Very practical testing tips.",
+    "userId": "user-007",
+    "timestamp": "2024-04-03T13:45:00.000Z"
   },
   {
-    "id": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0008",
-    "title": "Cloud Computing Fundamentals with AWS",
-    "type": "Course",
-    "description": "An introduction to the core services and concepts of Amazon Web Services.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-01-10T08:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8008",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0008",
+    "feedbackText": "Good for AWS basics.",
+    "userId": "user-008",
+    "timestamp": "2024-01-13T09:00:00.000Z"
   },
   {
-    "id": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0009",
-    "title": "Machine Learning with Scikit-learn",
-    "type": "Book",
-    "description": "Implement popular machine learning algorithms using Python's Scikit-learn library.",
-    "authorId": "auth-david",
-    "createdAt": "2024-03-20T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8009",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0009",
+    "feedbackText": "Sklearn concepts explained clearly.",
+    "userId": "user-009",
+    "timestamp": "2024-03-22T11:15:00.000Z"
   },
   {
-    "id": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0010",
-    "title": "Version Control with Git and GitHub",
-    "type": "Tutorial",
-    "description": "Master branching, merging, and collaborative workflows with Git and GitHub.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-02-14T14:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8010",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0010",
+    "feedbackText": "Helped me understand Git flow.",
+    "userId": "user-010",
+    "timestamp": "2024-02-16T15:15:00.000Z"
   },
   {
-    "id": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0011",
-    "title": "Building RESTful APIs with Node.js and Express",
-    "type": "Course",
-    "description": "Learn to create robust and scalable APIs using Node.js and the Express framework.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-05T09:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8011",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0011",
+    "feedbackText": "Excellent API development guide.",
+    "userId": "user-001",
+    "timestamp": "2024-04-07T09:45:00.000Z"
   },
   {
-    "id": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0012",
-    "title": "Understanding Kubernetes for Container Orchestration",
-    "type": "Video Series",
-    "description": "A deep dive into deploying, managing, and scaling containerized applications with Kubernetes.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-03-18T15:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8012",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0012",
+    "feedbackText": "Kubernetes demystified!",
+    "userId": "user-002",
+    "timestamp": "2024-03-20T15:30:00.000Z"
   },
   {
-    "id": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0013",
-    "title": "Data Visualization with D3.js",
-    "type": "Tutorial",
-    "description": "Create interactive and dynamic data visualizations using the D3.js library.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-01-28T10:45:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8013",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0013",
+    "feedbackText": "D3.js examples are too complex for beginners.",
+    "userId": "user-003",
+    "timestamp": "2024-01-30T11:00:00.000Z"
   },
   {
-    "id": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0014",
-    "title": "Ethical Hacking: An Introduction",
-    "type": "Book",
-    "description": "Learn the basics of cybersecurity and ethical hacking methodologies.",
-    "authorId": "auth-david",
-    "createdAt": "2024-02-08T12:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8014",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0014",
+    "feedbackText": "Good for an intro to ethical hacking.",
+    "userId": "user-004",
+    "timestamp": "2024-02-10T12:15:00.000Z"
   },
   {
-    "id": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0015",
-    "title": "Fundamentals of UX/UI Design",
-    "type": "Course",
-    "description": "Understand user experience and user interface principles for effective design.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-03-22T16:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8015",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0015",
+    "feedbackText": "Clear UX/UI fundamentals.",
+    "userId": "user-005",
+    "timestamp": "2024-03-24T16:45:00.000Z"
   },
   {
-    "id": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0016",
-    "title": "Microservices Architecture Patterns",
-    "type": "Article",
-    "description": "Explore common patterns and best practices for designing microservices.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-10T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8016",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0016",
+    "feedbackText": "Insightful patterns for microservices.",
+    "userId": "user-006",
+    "timestamp": "2024-04-12T10:30:00.000Z"
   },
   {
-    "id": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0017",
-    "title": "Building a Portfolio with HTML, CSS, and JavaScript",
-    "type": "Tutorial",
-    "description": "A step-by-step guide to creating a professional web development portfolio.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-02-01T09:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8017",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0017",
+    "feedbackText": "Helped me build my portfolio!",
+    "userId": "user-007",
+    "timestamp": "2024-02-03T09:30:00.000Z"
   },
   {
-    "id": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0018",
-    "title": "Go Programming Language for Backend Development",
-    "type": "Course",
-    "description": "Learn to write efficient and concurrent backend services using Go.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-03-01T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8018",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0018",
+    "feedbackText": "Go examples are very practical.",
+    "userId": "user-008",
+    "timestamp": "2024-03-03T11:30:00.000Z"
   },
   {
-    "id": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0019",
-    "title": "Deep Learning with TensorFlow",
-    "type": "Video Series",
-    "description": "From neural networks to advanced deep learning models using TensorFlow.",
-    "authorId": "auth-david",
-    "createdAt": "2024-01-25T15:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8019",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0019",
+    "feedbackText": "TensorFlow series is excellent.",
+    "userId": "user-009",
+    "timestamp": "2024-01-27T15:30:00.000Z"
   },
   {
-    "id": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0020",
-    "title": "Agile Methodologies for Software Development",
-    "type": "Article",
-    "description": "An overview of Scrum and Kanban and how to apply them in your projects.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-02-10T10:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8020",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0020",
+    "feedbackText": "Good intro to Agile, but could be more detailed.",
+    "userId": "user-010",
+    "timestamp": "2024-02-12T11:00:00.000Z"
   },
   {
-    "id": "res-6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0021",
-    "title": "Database Design Principles",
-    "type": "Book",
-    "description": "A guide to designing efficient and scalable relational databases.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-15T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8021",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "feedbackText": "A must-have for Python beginners.",
+    "userId": "user-011",
+    "timestamp": "2024-01-21T11:30:00.000Z"
   },
   {
-    "id": "res-7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f0022",
-    "title": "Introduction to Web Accessibility",
-    "type": "Course",
-    "description": "Learn to build inclusive web experiences for all users.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-03-08T14:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8022",
+    "resourceId": "res-06c39f21-7290-4c74-9040-277501a30002",
+    "feedbackText": "Challenging but rewarding content.",
+    "userId": "user-012",
+    "timestamp": "2024-02-06T13:30:00.000Z"
   },
   {
-    "id": "res-8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a0023",
-    "title": "Serverless Computing with AWS Lambda",
-    "type": "Tutorial",
-    "description": "Develop and deploy serverless functions using AWS Lambda and API Gateway.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-02-20T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8023",
+    "resourceId": "res-7d341b53-b097-4f67-a859-58d35e180003",
+    "feedbackText": "React hooks explained perfectly.",
+    "userId": "user-013",
+    "timestamp": "2024-03-13T10:45:00.000Z"
   },
   {
-    "id": "res-9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b0024",
-    "title": "Full-Stack Development with MERN Stack",
-    "type": "Course",
-    "description": "Build a complete web application using MongoDB, Express, React, and Node.js.",
-    "authorId": "auth-david",
-    "createdAt": "2024-01-05T09:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8024",
+    "resourceId": "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
+    "feedbackText": "A bit dry, but informative.",
+    "userId": "user-014",
+    "timestamp": "2024-01-26T15:00:00.000Z"
   },
   {
-    "id": "res-0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c0025",
-    "title": "Python for Data Engineering",
-    "type": "Video Series",
-    "description": "Tools and techniques for building data pipelines and ETL processes with Python.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-04-01T16:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8025",
+    "resourceId": "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
+    "feedbackText": "Fantastic resource for SQL beginners.",
+    "userId": "user-015",
+    "timestamp": "2024-02-29T16:30:00.000Z"
   },
   {
-    "id": "res-1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d0026",
-    "title": "Getting Started with Vue.js",
-    "type": "Tutorial",
-    "description": "A quick introduction to the Vue.js framework for building reactive user interfaces.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-03-12T08:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8026",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40006",
+    "feedbackText": "Simple and effective Docker tutorial.",
+    "userId": "user-016",
+    "timestamp": "2024-03-08T10:45:00.000Z"
   },
   {
-    "id": "res-2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e0027",
-    "title": "DevOps Fundamentals: CI/CD Pipelines",
-    "type": "Article",
-    "description": "Understand Continuous Integration and Continuous Delivery for modern software deployment.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-01-30T13:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8027",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0007",
+    "feedbackText": "Helped improve my testing workflow.",
+    "userId": "user-017",
+    "timestamp": "2024-04-04T14:15:00.000Z"
   },
   {
-    "id": "res-3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f0028",
-    "title": "Advanced SQL Optimization Techniques",
-    "type": "Course",
-    "description": "Learn to write highly performant SQL queries and optimize database operations.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-02-18T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8028",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0008",
+    "feedbackText": "Essential for understanding AWS.",
+    "userId": "user-018",
+    "timestamp": "2024-01-14T09:15:00.000Z"
   },
   {
-    "id": "res-4f5a6b7c-8d9e-0f1a-2b3c-4d5e6f7a0029",
-    "title": "Natural Language Processing with spaCy",
-    "type": "Book",
-    "description": "A practical guide to building NLP applications using the spaCy library in Python.",
-    "authorId": "auth-david",
-    "createdAt": "2024-03-25T14:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8029",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0009",
+    "feedbackText": "Scikit-learn made accessible.",
+    "userId": "user-019",
+    "timestamp": "2024-03-23T11:45:00.000Z"
   },
   {
-    "id": "res-5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b0030",
-    "title": "Cloud Security Best Practices",
-    "type": "Video",
-    "description": "Essential guidelines for securing your applications and data in the cloud.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-01-10T09:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8030",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0010",
+    "feedbackText": "A great overview of Git and GitHub.",
+    "userId": "user-020",
+    "timestamp": "2024-02-17T15:45:00.000Z"
   },
   {
-    "id": "res-6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0031",
-    "title": "React Native for Mobile App Development",
-    "type": "Course",
-    "description": "Build cross-platform mobile applications using JavaScript and React Native.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-08T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8031",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0011",
+    "feedbackText": "Highly recommend for Node.js API development.",
+    "userId": "user-021",
+    "timestamp": "2024-04-09T10:15:00.000Z"
   },
   {
-    "id": "res-7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d0032",
-    "title": "System Design Interview Prep",
-    "type": "Tutorial",
-    "description": "Strategies and common patterns for tackling system design interview questions.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-03-03T15:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8032",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0012",
+    "feedbackText": "Kubernetes insights are valuable.",
+    "userId": "user-022",
+    "timestamp": "2024-03-21T15:45:00.000Z"
   },
   {
-    "id": "res-8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e0033",
-    "title": "Introduction to Blockchain Technology",
-    "type": "Article",
-    "description": "Understand the core concepts of blockchain, cryptocurrencies, and decentralized applications.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-02-15T12:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8033",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0013",
+    "feedbackText": "Good for advanced users, challenging for beginners.",
+    "userId": "user-023",
+    "timestamp": "2024-01-31T11:15:00.000Z"
   },
   {
-    "id": "res-9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f0034",
-    "title": "Big Data Processing with Apache Spark",
-    "type": "Course",
-    "description": "Learn to process and analyze large datasets efficiently using Apache Spark.",
-    "authorId": "auth-david",
-    "createdAt": "2024-01-18T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8034",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0014",
+    "feedbackText": "Very informative introduction.",
+    "userId": "user-024",
+    "timestamp": "2024-02-11T12:45:00.000Z"
   },
   {
-    "id": "res-0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a0035",
-    "title": "Introduction to Cybersecurity",
-    "type": "Video Series",
-    "description": "Basic concepts of cybersecurity, threats, and defensive measures.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-03-28T14:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8035",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0015",
+    "feedbackText": "Helped solidify my design principles.",
+    "userId": "user-025",
+    "timestamp": "2024-03-25T17:00:00.000Z"
   },
   {
-    "id": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40036",
-    "title": "Advanced TypeScript for Large Applications",
-    "type": "Book",
-    "description": "Best practices for using TypeScript to build robust and maintainable large-scale applications.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-03T11:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8036",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0016",
+    "feedbackText": "A great resource for microservices architecture.",
+    "userId": "user-026",
+    "timestamp": "2024-04-13T10:30:00.000Z"
   },
   {
-    "id": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0037",
-    "title": "Frontend Performance Optimization",
-    "type": "Tutorial",
-    "description": "Techniques and tools to make your web applications load faster and run smoother.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-01-22T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8037",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0017",
+    "feedbackText": "Good, but some parts felt rushed.",
+    "userId": "user-027",
+    "timestamp": "2024-02-04T09:30:00.000Z"
   },
   {
-    "id": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0038",
-    "title": "Introduction to Data Structures & Algorithms",
-    "type": "Course",
-    "description": "Essential concepts for problem-solving in computer science.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-03-15T09:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8038",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0018",
+    "feedbackText": "Clear and practical Go examples.",
+    "userId": "user-028",
+    "timestamp": "2024-03-04T11:30:00.000Z"
   },
   {
-    "id": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0039",
-    "title": "Reinforcement Learning Fundamentals",
-    "type": "Video Series",
-    "description": "An introduction to the principles and algorithms of reinforcement learning.",
-    "authorId": "auth-david",
-    "createdAt": "2024-02-05T14:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8039",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0019",
+    "feedbackText": "Very in-depth deep learning course.",
+    "userId": "user-029",
+    "timestamp": "2024-01-28T15:30:00.000Z"
   },
   {
-    "id": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0040",
-    "title": "Project Management with Jira",
-    "type": "Tutorial",
-    "description": "Learn to manage your software projects effectively using Jira.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-01-29T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8040",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0020",
+    "feedbackText": "Helpful for understanding Agile basics.",
+    "userId": "user-030",
+    "timestamp": "2024-02-13T11:00:00.000Z"
   },
   {
-    "id": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0041",
-    "title": "Design Patterns in Modern JavaScript",
-    "type": "Article",
-    "description": "Understand and apply common design patterns in your JavaScript code.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-04-12T13:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8041",
+    "resourceId": "res-6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0021",
+    "feedbackText": "Good overview of database design.",
+    "userId": "user-001",
+    "timestamp": "2024-04-16T11:30:00.000Z"
   },
   {
-    "id": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0042",
-    "title": "GraphQL API Development",
-    "type": "Course",
-    "description": "Build flexible and efficient APIs using GraphQL with Node.js.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-03-06T16:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8042",
+    "resourceId": "res-7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f0022",
+    "feedbackText": "Made web accessibility understandable.",
+    "userId": "user-002",
+    "timestamp": "2024-03-09T14:30:00.000Z"
   },
   {
-    "id": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0043",
-    "title": "Testing Microservices with Jest and Supertest",
-    "type": "Tutorial",
-    "description": "Learn how to effectively test your microservices using popular JavaScript testing frameworks.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-02-22T09:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8043",
+    "resourceId": "res-8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a0023",
+    "feedbackText": "Lambda concepts are clear.",
+    "userId": "user-003",
+    "timestamp": "2024-02-21T10:30:00.000Z"
   },
   {
-    "id": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0044",
-    "title": "Introduction to Data Warehousing",
-    "type": "Book",
-    "description": "Explore the concepts and architecture of data warehouses for business intelligence.",
-    "authorId": "auth-david",
-    "createdAt": "2024-01-12T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8044",
+    "resourceId": "res-9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b0024",
+    "feedbackText": "Comprehensive MERN stack guide.",
+    "userId": "user-004",
+    "timestamp": "2024-01-06T10:00:00.000Z"
   },
   {
-    "id": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0045",
-    "title": "Container Security with Kubernetes",
-    "type": "Video",
-    "description": "Best practices for securing your containerized applications deployed on Kubernetes.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-03-30T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8045",
+    "resourceId": "res-0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c0025",
+    "feedbackText": "Good for data engineering with Python.",
+    "userId": "user-005",
+    "timestamp": "2024-04-02T16:30:00.000Z"
   },
   {
-    "id": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0046",
-    "title": "Advanced CSS Layouts with Flexbox and Grid",
-    "type": "Course",
-    "description": "Master modern CSS layout techniques for responsive web design.",
-    "authorId": "auth-alice",
-    "createdAt": "2024-02-19T14:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8046",
+    "resourceId": "res-1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d0026",
+    "feedbackText": "Vue.js introduction could be more detailed.",
+    "userId": "user-006",
+    "timestamp": "2024-03-13T09:00:00.000Z"
   },
   {
-    "id": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0047",
-    "title": "API Gateway Implementation",
-    "type": "Article",
-    "description": "Understanding and implementing API Gateways in microservices architecture.",
-    "authorId": "auth-bob",
-    "createdAt": "2024-04-07T09:30:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8047",
+    "resourceId": "res-2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e0027",
+    "feedbackText": "CI/CD concepts are very clear.",
+    "userId": "user-007",
+    "timestamp": "2024-01-31T13:30:00.000Z"
   },
   {
-    "id": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0048",
-    "title": "Domain-Driven Design Fundamentals",
-    "type": "Book",
-    "description": "A deep dive into Domain-Driven Design principles for complex software systems.",
-    "authorId": "auth-charlie",
-    "createdAt": "2024-03-02T10:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8048",
+    "resourceId": "res-3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f0028",
+    "feedbackText": "Helped optimize my SQL queries.",
+    "userId": "user-008",
+    "timestamp": "2024-02-19T11:30:00.000Z"
   },
   {
-    "id": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0049",
-    "title": "Introduction to Quantum Computing",
-    "type": "Video Series",
-    "description": "Explore the basics of quantum mechanics and its application in computing.",
-    "authorId": "auth-david",
-    "createdAt": "2024-02-28T15:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8049",
+    "resourceId": "res-4f5a6b7c-8d9e-0f1a-2b3c-4d5e6f7a0029",
+    "feedbackText": "SpaCy guide is excellent for NLP.",
+    "userId": "user-009",
+    "timestamp": "2024-03-26T14:30:00.000Z"
   },
   {
-    "id": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0050",
-    "title": "Implementing OAuth 2.0 in Web Applications",
-    "type": "Tutorial",
-    "description": "A guide to integrating OAuth 2.0 for secure user authentication and authorization.",
-    "authorId": "auth-eve",
-    "createdAt": "2024-01-26T11:00:00.000Z"
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8050",
+    "resourceId": "res-5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b0030",
+    "feedbackText": "Good, but could be more practical examples.",
+    "userId": "user-010",
+    "timestamp": "2024-01-11T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8051",
+    "resourceId": "res-6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0031",
+    "feedbackText": "React Native explained very well.",
+    "userId": "user-011",
+    "timestamp": "2024-04-09T10:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8052",
+    "resourceId": "res-7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d0032",
+    "feedbackText": "Essential for system design interviews.",
+    "userId": "user-012",
+    "timestamp": "2024-03-04T15:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8053",
+    "resourceId": "res-8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e0033",
+    "feedbackText": "Good intro to blockchain.",
+    "userId": "user-013",
+    "timestamp": "2024-02-16T12:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8054",
+    "resourceId": "res-9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f0034",
+    "feedbackText": "Apache Spark tutorial is very helpful.",
+    "userId": "user-014",
+    "timestamp": "2024-01-19T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8055",
+    "resourceId": "res-0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a0035",
+    "feedbackText": "Clear cybersecurity fundamentals.",
+    "userId": "user-015",
+    "timestamp": "2024-03-29T14:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8056",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40036",
+    "feedbackText": "Advanced TypeScript concepts explained well.",
+    "userId": "user-016",
+    "timestamp": "2024-04-04T11:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8057",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0037",
+    "feedbackText": "Great tips for frontend performance.",
+    "userId": "user-017",
+    "timestamp": "2024-01-23T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8058",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0038",
+    "feedbackText": "DSA intro is very beginner-friendly.",
+    "userId": "user-018",
+    "timestamp": "2024-03-16T09:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8059",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0039",
+    "feedbackText": "Reinforcement learning explained well.",
+    "userId": "user-019",
+    "timestamp": "2024-02-06T14:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8060",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0040",
+    "feedbackText": "Jira tutorial is very useful for project management.",
+    "userId": "user-020",
+    "timestamp": "2024-01-30T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8061",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0041",
+    "feedbackText": "Excellent overview of JS design patterns.",
+    "userId": "user-021",
+    "timestamp": "2024-04-14T13:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8062",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0042",
+    "feedbackText": "GraphQL development is made easy.",
+    "userId": "user-022",
+    "timestamp": "2024-03-07T16:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8063",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0043",
+    "feedbackText": "Effective testing strategies for microservices.",
+    "userId": "user-023",
+    "timestamp": "2024-02-23T09:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8064",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0044",
+    "feedbackText": "Good for data warehousing introduction.",
+    "userId": "user-024",
+    "timestamp": "2024-01-13T11:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8065",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0045",
+    "feedbackText": "Kubernetes security is well-covered.",
+    "userId": "user-025",
+    "timestamp": "2024-03-31T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8066",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0046",
+    "feedbackText": "Excellent CSS layout techniques.",
+    "userId": "user-026",
+    "timestamp": "2024-02-20T14:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8067",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0047",
+    "feedbackText": "API Gateway explained clearly.",
+    "userId": "user-027",
+    "timestamp": "2024-04-08T09:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8068",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0048",
+    "feedbackText": "Good introduction to DDD.",
+    "userId": "user-028",
+    "timestamp": "2024-03-03T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8069",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0049",
+    "feedbackText": "Intriguing intro to quantum computing.",
+    "userId": "user-029",
+    "timestamp": "2024-02-29T15:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8070",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0050",
+    "feedbackText": "OAuth 2.0 implementation guide is very practical.",
+    "userId": "user-030",
+    "timestamp": "2024-01-27T11:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8071",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "feedbackText": "Clear explanations, perfect for beginners.",
+    "userId": "user-001",
+    "timestamp": "2024-01-24T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8072",
+    "resourceId": "res-06c39f21-7290-4c74-9040-277501a30002",
+    "feedbackText": "Very advanced, but highly informative.",
+    "userId": "user-005",
+    "timestamp": "2024-02-09T12:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8073",
+    "resourceId": "res-7d341b53-b097-4f67-a859-58d35e180003",
+    "feedbackText": "Love the practical examples for hooks.",
+    "userId": "user-009",
+    "timestamp": "2024-03-16T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8074",
+    "resourceId": "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
+    "feedbackText": "Good, but I found some parts unclear.",
+    "userId": "user-013",
+    "timestamp": "2024-01-29T14:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8075",
+    "resourceId": "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
+    "feedbackText": "A must-read for anyone new to SQL.",
+    "userId": "user-017",
+    "timestamp": "2024-03-03T16:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8076",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40006",
+    "feedbackText": "Docker basics covered perfectly.",
+    "userId": "user-021",
+    "timestamp": "2024-03-11T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8077",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0007",
+    "feedbackText": "Valuable insights into frontend testing.",
+    "userId": "user-025",
+    "timestamp": "2024-04-07T13:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8078",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0008",
+    "feedbackText": "Clear and concise intro to AWS.",
+    "userId": "user-029",
+    "timestamp": "2024-01-17T08:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8079",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0009",
+    "feedbackText": "Perfect for learning Scikit-learn.",
+    "userId": "user-002",
+    "timestamp": "2024-03-28T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8080",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0010",
+    "feedbackText": "Helped streamline my Git workflow.",
+    "userId": "user-006",
+    "timestamp": "2024-02-20T15:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8081",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0011",
+    "feedbackText": "Highly recommended for API devs.",
+    "userId": "user-010",
+    "timestamp": "2024-04-12T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8082",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0012",
+    "feedbackText": "A bit too complex for me.",
+    "userId": "user-014",
+    "timestamp": "2024-03-25T15:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8083",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0013",
+    "feedbackText": "D3.js is powerful, but this tutorial is dense.",
+    "userId": "user-018",
+    "timestamp": "2024-02-04T10:50:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8084",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0014",
+    "feedbackText": "Very comprehensive cybersecurity intro.",
+    "userId": "user-022",
+    "timestamp": "2024-02-15T12:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8085",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0015",
+    "feedbackText": "Great resource for design students.",
+    "userId": "user-026",
+    "timestamp": "2024-03-30T16:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8086",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0016",
+    "feedbackText": "Helped me understand microservices better.",
+    "userId": "user-030",
+    "timestamp": "2024-04-18T10:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8087",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0017",
+    "feedbackText": "A bit outdated, but still useful.",
+    "userId": "user-004",
+    "timestamp": "2024-02-08T09:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8088",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0018",
+    "feedbackText": "Go concurrency examples are excellent.",
+    "userId": "user-008",
+    "timestamp": "2024-03-08T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8089",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0019",
+    "feedbackText": "Amazing deep learning content!",
+    "userId": "user-012",
+    "timestamp": "2024-02-01T15:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8090",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0020",
+    "feedbackText": "Good refresher on Agile methods.",
+    "userId": "user-016",
+    "timestamp": "2024-02-17T10:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8091",
+    "resourceId": "res-6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0021",
+    "feedbackText": "Database design principles are clear.",
+    "userId": "user-020",
+    "timestamp": "2024-04-19T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8092",
+    "resourceId": "res-7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f0022",
+    "feedbackText": "Helped me make my site more accessible.",
+    "userId": "user-024",
+    "timestamp": "2024-03-14T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8093",
+    "resourceId": "res-8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a0023",
+    "feedbackText": "Serverless concepts are well-explained.",
+    "userId": "user-028",
+    "timestamp": "2024-02-28T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8094",
+    "resourceId": "res-9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b0024",
+    "feedbackText": "Great practical guide to MERN stack.",
+    "userId": "user-003",
+    "timestamp": "2024-01-09T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8095",
+    "resourceId": "res-0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c0025",
+    "feedbackText": "Python for data engineering is very useful.",
+    "userId": "user-007",
+    "timestamp": "2024-04-05T16:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8096",
+    "resourceId": "res-1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d0026",
+    "feedbackText": "Good Vue.js intro, but I wanted more depth.",
+    "userId": "user-011",
+    "timestamp": "2024-03-16T08:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8097",
+    "resourceId": "res-2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e0027",
+    "feedbackText": "CI/CD pipelines are crucial, and this explains it well.",
+    "userId": "user-015",
+    "timestamp": "2024-02-03T13:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8098",
+    "resourceId": "res-3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f0028",
+    "feedbackText": "Advanced SQL optimization is well-covered.",
+    "userId": "user-019",
+    "timestamp": "2024-02-22T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8099",
+    "resourceId": "res-4f5a6b7c-8d9e-0f1a-2b3c-4d5e6f7a0029",
+    "feedbackText": "Excellent NLP resource.",
+    "userId": "user-023",
+    "timestamp": "2024-03-29T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8100",
+    "resourceId": "res-5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b0030",
+    "feedbackText": "Good intro, but cloud security needs more depth.",
+    "userId": "user-027",
+    "timestamp": "2024-01-14T09:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8101",
+    "resourceId": "res-6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0031",
+    "feedbackText": "React Native is fun to learn with this.",
+    "userId": "user-002",
+    "timestamp": "2024-04-12T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8102",
+    "resourceId": "res-7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d0032",
+    "feedbackText": "System design strategies are invaluable.",
+    "userId": "user-006",
+    "timestamp": "2024-03-07T15:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8103",
+    "resourceId": "res-8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e0033",
+    "feedbackText": "Blockchain concepts are very clear.",
+    "userId": "user-010",
+    "timestamp": "2024-02-19T12:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8104",
+    "resourceId": "res-9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f0034",
+    "feedbackText": "Spark for big data is well-explained.",
+    "userId": "user-014",
+    "timestamp": "2024-01-22T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8105",
+    "resourceId": "res-0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a0035",
+    "feedbackText": "Cybersecurity basics were well-covered.",
+    "userId": "user-018",
+    "timestamp": "2024-04-01T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8106",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40036",
+    "feedbackText": "TypeScript for large apps is invaluable.",
+    "userId": "user-022",
+    "timestamp": "2024-04-07T11:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8107",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0037",
+    "feedbackText": "Frontend performance tips are very useful.",
+    "userId": "user-026",
+    "timestamp": "2024-01-26T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8108",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0038",
+    "feedbackText": "Perfect for learning DSA fundamentals.",
+    "userId": "user-030",
+    "timestamp": "2024-03-19T09:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8109",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0039",
+    "feedbackText": "RL concepts are well-explained.",
+    "userId": "user-004",
+    "timestamp": "2024-02-09T14:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8110",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0040",
+    "feedbackText": "Jira tutorial is clear and practical.",
+    "userId": "user-008",
+    "timestamp": "2024-02-02T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8111",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0041",
+    "feedbackText": "JS design patterns are well-covered.",
+    "userId": "user-012",
+    "timestamp": "2024-04-17T13:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8112",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0042",
+    "feedbackText": "GraphQL API development is very clear.",
+    "userId": "user-016",
+    "timestamp": "2024-03-10T16:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8113",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0043",
+    "feedbackText": "Microservices testing strategies are useful.",
+    "userId": "user-020",
+    "timestamp": "2024-02-27T09:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8114",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0044",
+    "feedbackText": "Data warehousing intro is comprehensive.",
+    "userId": "user-024",
+    "timestamp": "2024-01-16T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8115",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0045",
+    "feedbackText": "Kubernetes security best practices are clear.",
+    "userId": "user-028",
+    "timestamp": "2024-04-03T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8116",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0046",
+    "feedbackText": "Responsive design with Flexbox and Grid is well-taught.",
+    "userId": "user-003",
+    "timestamp": "2024-02-23T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8117",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0047",
+    "feedbackText": "API Gateway implementation is very practical.",
+    "userId": "user-007",
+    "timestamp": "2024-04-11T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8118",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0048",
+    "feedbackText": "DDD principles are clearly explained.",
+    "userId": "user-011",
+    "timestamp": "2024-03-06T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8119",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0049",
+    "feedbackText": "Fascinating intro to quantum computing.",
+    "userId": "user-015",
+    "timestamp": "2024-03-03T15:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8120",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0050",
+    "feedbackText": "OAuth 2.0 tutorial is highly practical.",
+    "userId": "user-019",
+    "timestamp": "2024-01-29T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8121",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "feedbackText": "Excellent course, easy to follow.",
+    "userId": "user-023",
+    "timestamp": "2024-01-27T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8122",
+    "resourceId": "res-06c39f21-7290-4c74-9040-277501a30002",
+    "feedbackText": "Advanced topics handled well.",
+    "userId": "user-027",
+    "timestamp": "2024-02-12T12:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8123",
+    "resourceId": "res-7d341b53-b097-4f67-a859-58d35e180003",
+    "feedbackText": "Great resource for learning React Hooks.",
+    "userId": "user-001",
+    "timestamp": "2024-03-19T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8124",
+    "resourceId": "res-e6f7a8b9-c0d1-4e2a-8f3b-1c4d5e6f7004",
+    "feedbackText": "Informative, but could be more engaging.",
+    "userId": "user-005",
+    "timestamp": "2024-02-01T14:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8125",
+    "resourceId": "res-9a8b7c6d-5e4f-3a2b-1c0d-e1f2a3b40005",
+    "feedbackText": "SQL basics well-explained.",
+    "userId": "user-009",
+    "timestamp": "2024-03-06T16:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8126",
+    "resourceId": "res-1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b40006",
+    "feedbackText": "Docker tutorial is concise and clear.",
+    "userId": "user-013",
+    "timestamp": "2024-03-14T10:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8127",
+    "resourceId": "res-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c0007",
+    "feedbackText": "Practical tips for testing frontend.",
+    "userId": "user-017",
+    "timestamp": "2024-04-10T13:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8128",
+    "resourceId": "res-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d0008",
+    "feedbackText": "AWS fundamentals are very clear.",
+    "userId": "user-021",
+    "timestamp": "2024-01-20T08:45:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8129",
+    "resourceId": "res-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e0009",
+    "feedbackText": "Good for Scikit-learn, but needs more advanced topics.",
+    "userId": "user-025",
+    "timestamp": "2024-03-30T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8130",
+    "resourceId": "res-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f0010",
+    "feedbackText": "Very helpful for Git and GitHub workflows.",
+    "userId": "user-029",
+    "timestamp": "2024-02-24T15:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8131",
+    "resourceId": "res-6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0011",
+    "feedbackText": "API development in Node.js is well-taught.",
+    "userId": "user-003",
+    "timestamp": "2024-04-15T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8132",
+    "resourceId": "res-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b0012",
+    "feedbackText": "Kubernetes is complex, but this makes it easier.",
+    "userId": "user-007",
+    "timestamp": "2024-03-27T15:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8133",
+    "resourceId": "res-8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c0013",
+    "feedbackText": "D3.js examples are too advanced for me.",
+    "userId": "user-011",
+    "timestamp": "2024-02-07T10:50:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8134",
+    "resourceId": "res-9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d0014",
+    "feedbackText": "Cybersecurity introduction is good.",
+    "userId": "user-015",
+    "timestamp": "2024-02-17T12:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8135",
+    "resourceId": "res-0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e0015",
+    "feedbackText": "UX/UI design principles are clear.",
+    "userId": "user-019",
+    "timestamp": "2024-04-01T16:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8136",
+    "resourceId": "res-1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f0016",
+    "feedbackText": "Good overview of microservices patterns.",
+    "userId": "user-023",
+    "timestamp": "2024-04-19T10:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8137",
+    "resourceId": "res-2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a0017",
+    "feedbackText": "Helpful for portfolio building.",
+    "userId": "user-027",
+    "timestamp": "2024-02-10T09:15:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8138",
+    "resourceId": "res-3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b0018",
+    "feedbackText": "Go for backend is a great skill.",
+    "userId": "user-001",
+    "timestamp": "2024-03-12T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8139",
+    "resourceId": "res-4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c0019",
+    "feedbackText": "TensorFlow course is comprehensive.",
+    "userId": "user-005",
+    "timestamp": "2024-02-03T15:10:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8140",
+    "resourceId": "res-5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d0020",
+    "feedbackText": "Agile overview is good.",
+    "userId": "user-009",
+    "timestamp": "2024-02-19T10:50:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8141",
+    "resourceId": "res-6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0021",
+    "feedbackText": "Clear and effective database design.",
+    "userId": "user-013",
+    "timestamp": "2024-04-20T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8142",
+    "resourceId": "res-7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f0022",
+    "feedbackText": "Web accessibility is explained well.",
+    "userId": "user-017",
+    "timestamp": "2024-03-17T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8143",
+    "resourceId": "res-8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a0023",
+    "feedbackText": "AWS Lambda is a game changer.",
+    "userId": "user-021",
+    "timestamp": "2024-02-29T10:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8144",
+    "resourceId": "res-9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b0024",
+    "feedbackText": "Excellent MERN stack guide for beginners.",
+    "userId": "user-025",
+    "timestamp": "2024-01-12T09:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8145",
+    "resourceId": "res-0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c0025",
+    "feedbackText": "Python for data engineering is a great course.",
+    "userId": "user-029",
+    "timestamp": "2024-04-08T16:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8146",
+    "resourceId": "res-1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d0026",
+    "feedbackText": "Vue.js intro is good, but brief.",
+    "userId": "user-004",
+    "timestamp": "2024-03-20T08:30:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8147",
+    "resourceId": "res-2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e0027",
+    "feedbackText": "CI/CD pipelines are well-explained.",
+    "userId": "user-008",
+    "timestamp": "2024-02-07T13:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8148",
+    "resourceId": "res-3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f0028",
+    "feedbackText": "SQL optimization techniques are very useful.",
+    "userId": "user-012",
+    "timestamp": "2024-02-26T11:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8149",
+    "resourceId": "res-4f5a6b7c-8d9e-0f1a-2b3c-4d5e6f7a0029",
+    "feedbackText": "NLP with spaCy is an excellent resource.",
+    "userId": "user-016",
+    "timestamp": "2024-04-02T14:00:00.000Z"
+  },
+  {
+    "id": "feed-6916542d-f933-40e9-a359-f30a9e7f8150",
+    "resourceId": "res-5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b0030",
+    "feedbackText": "Cloud security best practices are essential.",
+    "userId": "user-020",
+    "timestamp": "2024-01-18T09:00:00.000Z"
   }
 ]
