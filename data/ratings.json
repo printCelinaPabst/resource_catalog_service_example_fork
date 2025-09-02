@@ -859,5 +859,75 @@
     "ratingValue": 3,
     "userId": "user-021",
     "timestamp": "2024-02-24T10:00:00.000Z"
+  },
+  {
+    "id": "7f7f9cb1-54b3-4fc5-8632-dfa2539d85f0",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 1,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:44:45.035Z"
+  },
+  {
+    "id": "806ddd50-acb6-44f6-a058-82a547eefa26",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 1,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:44:46.964Z"
+  },
+  {
+    "id": "cdbdf66a-ef12-41da-8209-510c47e39c11",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 3,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:04.193Z"
+  },
+  {
+    "id": "d3a5de5c-127e-4f80-89e2-b9704ede033f",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 3,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:04.687Z"
+  },
+  {
+    "id": "68dd4909-a224-4a00-b779-d947e370bd02",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 5,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:07.019Z"
+  },
+  {
+    "id": "00c93cad-e66e-4e97-a835-43d45a3576e9",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 1,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:09.135Z"
+  },
+  {
+    "id": "6db51bb5-ebf3-4ea1-a48d-da753e323b1b",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 2,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:12.855Z"
+  },
+  {
+    "id": "0a65fdac-3a95-4042-b8b0-9017f81ed101",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 5,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:14.210Z"
+  },
+  {
+    "id": "3288ce10-4947-407a-b7b5-742587cce12c",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 1,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:15.494Z"
+  },
+  {
+    "id": "1824af17-2832-4974-860e-d89bd8b18593",
+    "resourceId": "res-187e1488-81d3-4a11-a83d-e3c79c8f0001",
+    "ratingValue": 5,
+    "userId": "anonymous",
+    "timestamp": "2025-08-29T10:45:22.464Z"
   }
 ]
