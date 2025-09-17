@@ -9,6 +9,7 @@ import { errorHandler } from './middleware/error-handler.js'; // Importiert die 
 import { logger } from './middleware/logger.js'; // Importiert die Logging-Middleware
 import 'dotenv/config'; // Importiert und konfiguriert dotenv, um Umgebungsvariablen aus der .env-Datei zu laden.
 import cors from 'cors'; // Importiert das CORS-Middleware-Paket.
+import { connectDB } from './db/connect.js';
 
 /**
  * @constant {number} PORT - Der Port, auf dem der Server lauschen soll.
@@ -46,9 +47,19 @@ app.use(express.json());
 app.use(cors());
 
 /**
- * @section Routen
- * @description Registriert den Ressourcen-Router.
+ * @section Datenbankverbindung
+ * @description Registriert die Datenbank.
  */
+// nutzt wert der variablen aus .env
+if (!process.env.MONGO_URI) {// wenn diese Umgebungsvariable nicht vorhanden ist,gibt Fehlermeldung aus
+    console.warn("[MongoDB] MONGO_URI nicht gesetzt - ohne DB keine Persistenz.")
+    process.exit(1);
+} else {
+    await connectDB(process.env.MONGO_URI,
+    {dbName: process.env.MONGO_DB || "resource_catalog"}
+    );
+}
+
 
 // Dummy-Route für den Root-Pfad zur Überprüfung der Service-Erreichbarkeit
 app.get('/', (req, res) => {
