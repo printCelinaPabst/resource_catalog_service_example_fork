@@ -9,7 +9,7 @@ export async function connectDB (
     mongoose.set("strictQuery", true); //steuert Abfragen an Datenbank,definiert Schema wenn Abfrage Schema nicht entspricht wird Abfrage abgelehnt
 
     const retries = 10; //Versuche um mit Datenbank zu verbinden
-    const delayMs = 2000; //
+    const delayMs = 2000; //Verzögerung bis zum neuen Versuch
 
     for (let i = 1; i <= retries; i++) {
         try {
